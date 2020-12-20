@@ -1,33 +1,43 @@
+import data  # projects definitions are placed in different file
+
+# https://flask.palletsprojects.com/en/1.1.x/api/
 from flask import Flask, render_template
 
+# create a Flask instance
 app = Flask(__name__)
 
 
+# connects default URL of server to render home.html
+
+
+# Create a sign up page
 @app.route('/')
-def home():
-    return render_template('home.html', project="5 Hour Challenge")
+def home_route():
+    return render_template("home.html", projects=data.setup())
 
-@app.route('/main')
-def main():
-    stocks = [
-        {
-            "name":"Qualcomm",
-            "price":145.01,
-            "divyield":1.79
-        },
 
-        {
-            "name":"Nvidia",
-            "price":582.48,
-            "divyield":.11
-        },
-    ]
-    return render_template("main.html", stocks=stocks)
+# connects /hello path of server to render hello.html
 
-@app.route('/bio')
-def bio():
-    embed = "https://repl.it/@BraydenBasinger"
-    return render_template("bio.html", age=True)
+
+@app.route('/hello/')
+def hello_route():
+    return render_template("hello.html", projects=data.setup())
+
+
+# connects /flask path of server to render flask.html
+
+
+@app.route('/flask/')
+def flask_route():
+    return render_template("flask.html", projects=data.setup())
+
+
+@app.route('/playlist/')
+def playlist_route():
+    return render_template("playlist.html", datalist=data.playlist(), projects=data.setup())
+
+# Create a sign up page
 
 if __name__ == "__main__":
-    app.run(debug=True, port='5000', host='127.0.0.1')
+    # runs the application on the repl development server
+    app.run(port='3000', host='127.0.0.1')

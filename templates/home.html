@@ -1,62 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Home</title>
-</head>
+{% extends "base.html" %}
 
-<div>
-    <p>This website is to show Mr. Mortensen about our learnings. This is for {{project}}</p>
-</div>
-
-
-<body>
+{% block head %}
+<title>{{name}}| Home </title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
 <style>
-      body{
-        background-image: url('cool-background.jpg');
-        background-repeat: no-repeat;
-        animation: bg-animation 10s infinite;
-
-        }
-
-        @-webkit-keyframes bg-animation {
-
-        }
-
-        @keyframes bg-animation {
-            0% {
-                background-color: #33E3FF;
-            }
-            25% {
-                background-color: #FF33EC;
-            }
-            50% {
-                background-color: #CB7173;
-            }
-            75% {
-                background-color: #36E771;
-            }
-            100% {
-                background-color: #EC9F20;
-            }
-
-        }
-
+    body, html {
+      background: black;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    }
+}
   </style>
 
-<h2>Home Page</h2>
+{% endblock %}
 
-<div>
-    <ul>
-        <li><a style="font-size:15px"href="https://github.com/macddmac" class="btn">Rohan's GitHub</a></li>
-        <li><a style="font-size:15px"href="https://github.com/1855387" class="btn">Charlie's GitHub</a></li>
-        <li><a style="font-size:15px"href="https://docs.google.com/document/d/1oGtX9ncsqYuhg0_uN67HaIjHnqHgeaIs91uNyNL6GxE/edit" class="btn">Pair Journal</a></li>
-        <li><a style="font-size:20px"href="/bio" class="btn">About Me</a></li>
-        <li><a style="font-size:20px"href="/main" class="btn">Main Page</a></li>
-        </li>
-    </ul>
+{% block header %}
+<div id="hero-header">
+    <div class="hero-text">
+        <h1 style="font-size:51px; position:relative;">Charlie-A Portfolio</h1>
+        <p>ho-ho-holloween (psst scroll down to see something cool)</p>
+    </div>
 </div>
 
-</body>
+<div style="margin-top:130vh;">
+    <svg class="moon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" width="100" height="100" style="margin-top:130vh">
+        <circle r="30" fill="#fff" cx="70" cy="70" />
+    </svg>
 
+    <div class="back ground" style="margin-top:130vh"></div>
+    <div class="mid ground" style="margin-top:130vh"></div>
+    <div class="frontmid ground" style="margin-top:130vh"></div>
+    <div class="front ground" style="margin-top:130vh"></div>
+    <div class="horseman" style="margin-top:130vh"></div>
 
-</html>
+</div>
+
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js?r=18'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/findShapeIndex.js?r=19'></script><script  src="{{ url_for('static',filename='script.js') }}"></script>
+{% endblock %}
