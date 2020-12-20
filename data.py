@@ -32,7 +32,7 @@ def playlist():
 
 def setup():
     #  Person Data
-    title = "Charlie/Rohan 5Hour"
+    title = "Charlie/Rohan 5 Hour"
     name = "Charlie, Rohan"
     source = {
         "name": name,
