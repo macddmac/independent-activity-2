@@ -19,17 +19,13 @@ def home_route():
 # connects /hello path of server to render hello.html
 
 
-@app.route('/hello/')
+@app.route('/5hr/')
 def hello_route():
-    return render_template("hello.html", projects=data.setup())
+    return render_template("5hr.html", projects=data.setup())
 
 
 # connects /flask path of server to render flask.html
 
-
-@app.route('/flask/')
-def flask_route():
-    return render_template("flask.html", projects=data.setup())
 
 
 @app.route('/playlist/')
