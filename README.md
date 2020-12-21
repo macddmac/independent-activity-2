@@ -1,7 +1,7 @@
 ##### What This Is
-This website is to show my learning on the past weeks of class. 
+This website is to show the work Charlie and Rohan have done for the 5 Hour Project
 ##### What This Contains
-HTML, Jinja, Python, Routes, Passing data to HTML
+We have a website that has things about us with images and embeds
 ##### What Was Used
 IntelliJ and GitHub
 
