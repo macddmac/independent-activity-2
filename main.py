@@ -23,13 +23,13 @@ def home_route():
 def hello_route():
     return render_template("5hr.html", projects=data.setup())
 
+
 @app.route('/anim/')
 def animation_route():
     return render_template("animation.html", projects=data.setup())
 
 
 # connects /flask path of server to render flask.html
-
 
 
 @app.route('/playlist/')
